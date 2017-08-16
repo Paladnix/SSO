@@ -6,7 +6,7 @@ $call_back = $_POST['call_back'];
 
 if($name == 'baiyan'){
     $uuid = 553;
-    $_COOKIE['uuid'] = $uuid;
+    setcookie('uuid', $uuid, time()+1800);
     header("Location:$call_back?uuid=$uuid");
 }
 else {
