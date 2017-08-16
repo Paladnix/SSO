@@ -3,8 +3,10 @@
 $call_back = $_GET['call_back'];
 
 if( $_COOKIE['uuid'] == '' ){
-    header("Location:http://paladnix.b/login.html?call_back=$call_back");
+    header("Location:http://paladnix.b/sso/loginh.php?call_back=$call_back");
 }else{ 
     $uuid = 553;
-    header("Location:$call_back?$uuid");
+    setcookie('uuid', $uuid);
+    //echo $_COOKIE['uuid'];
+    header("Location:$call_back?uuid=$uuid");
 }
